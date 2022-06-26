@@ -1,6 +1,6 @@
 package antifraud.security;
 
-import antifraud.service.UserService;
+import antifraud.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -10,20 +10,35 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.AuthenticationEntryPoint;
 
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private UserService userService;
+    UserDetailService userDetailService;
 
+    @Bean
+    public PasswordEncoder getEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .userDetailsService(userDetailService)
+                .passwordEncoder(getEncoder());
+    }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
 
+        AuthenticationEntryPoint restAuthenticationEntryPoint = new RestAuthenticationEntryPoint();
+
         http
                 .httpBasic()
-                .authenticationEntryPoint(new RestAuthenticationEntryPoint()) // Handles auth error
+                .authenticationEntryPoint(restAuthenticationEntryPoint) // Handles auth error
                 .and()
                       .csrf()
                       .disable()
@@ -31,29 +46,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                       .frameOptions()
                       .disable() // for Postman, the H2 console
                 .and()
-                     .authorizeRequests() // manage access
-                     .antMatchers("/actuator/shutdown").permitAll() // needs to run test
-                     .antMatchers(HttpMethod.POST, "/api/auth/user").permitAll()
-                     .antMatchers(HttpMethod.DELETE, "/api/auth/user/").authenticated()
-                     .antMatchers("/api/auth/list").authenticated()
+                .authorizeRequests() // manage access
+                .antMatchers(HttpMethod.POST, "/api/auth/user").permitAll()
+                .antMatchers("/actuator/shutdown").permitAll()
+                .antMatchers("/api/auth/list").hasAnyRole("ADMINISTRATOR", "SUPPORT")
+                .mvcMatchers(HttpMethod.DELETE, "/api/auth/user/*").hasRole("ADMINISTRATOR")
+                .mvcMatchers(HttpMethod.POST, "/api/antifraud/transaction").hasRole("MERCHANT")
+                .mvcMatchers(HttpMethod.PUT, "/api/auth/access").hasRole("ADMINISTRATOR")
+                .mvcMatchers(HttpMethod.PUT, "/api/auth/role").hasRole("ADMINISTRATOR")
                 .and()
-                     .sessionManagement()
-                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS); // no session
-    }
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS); // no session
 
-    @Autowired
-    void configureGlobal(AuthenticationManagerBuilder auth)
-                                                      throws Exception {
-        auth
-                .userDetailsService(userService);
-        auth
-                .inMemoryAuthentication()
-                .passwordEncoder(getEncoder());
-    }
-
-    @Bean
-    public BCryptPasswordEncoder getEncoder() {
-        return new BCryptPasswordEncoder();
     }
 }
-

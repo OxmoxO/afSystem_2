@@ -1,15 +1,21 @@
 package antifraud.dao;
 
 import antifraud.model.User;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-import java.util.List;
-import java.util.Optional;
 
-@Repository
-public interface UserDao extends CrudRepository<User, Long> {
+import javax.transaction.Transactional;
 
-    List<User> findAll();
+public interface UserDao extends CrudRepository<User, Integer> {
 
-    Optional<User> findByUsernameIgnoreCase(String username);
+    @Transactional
+    @Query("UPDATE User u SET u.isNonLocked = ?1 WHERE u.username = ?2")
+    @Modifying
+    void updateLock(boolean isNonLocked, String username);
+
+    @Transactional
+    @Query("UPDATE User u SET u.role = ?1 WHERE u.username = ?2")
+    @Modifying
+     void updateRole(String role, String username);
 }

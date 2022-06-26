@@ -1,79 +1,51 @@
 package antifraud.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.util.Collection;
-import java.util.Collections;
 
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Objects;
+@Entity
+@Table(name = "user")
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
-@Entity
-public class User implements UserDetails {
-
-    @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
-            allocationSize = 1
-    )
-    @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
-    )
-    private Long id;
-
-    @NotNull
-    @NotEmpty
+public class User  implements Serializable {
+    @Column
     private String name;
-
-    @NotEmpty
+    @Column
     private String username;
-    @NotNull
-
-    @NotEmpty
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @Column
     private String password;
+    @Id
+    @GeneratedValue(strategy =  GenerationType.SEQUENCE)
+    private Long id;
+    @Column
+    private String role;
+    @Column
+    private boolean isNonLocked;
 
-    @JsonIgnore
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptyList();
-    }
+    public User(String name, String username, String password, String role) {
+            this.name = name;
+            this.username = username;
+            this.password = password;
+            this.role = role;
+            isNonLocked = this.role.equals("ROLE_ADMINISTRATOR");
+        }
 
-    @JsonIgnore
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            User user = (User) o;
+            return username.equals(user.username);
+        }
+        @Override
+        public int hashCode() {
+            return Objects.hash(username);
+        }
     }
-
-    @JsonIgnore
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @JsonIgnore
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @JsonIgnore
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
-}
 
 
