@@ -1,7 +1,7 @@
 package antifraud.model.dto;
 
 
-import antifraud.model.annotation.RoleCorrect;
+import antifraud.model.annotation.EnumValueCorrect;
 import antifraud.model.enums.Role;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +15,6 @@ public class ChangeRoleDto {
     @NotEmpty
     private String username;
 
-    @RoleCorrect(enumClazz = Role.class, message = "Role incorrect")
+    @EnumValueCorrect(enumClazz = Role.class, message = "Role incorrect!")
     private String role;
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AntiFraudTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-10T13:45:34" hostname="oxmox" time="29.312">
+<testsuite name="AntiFraudTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-10T21:12:48" hostname="oxmox" time="37.975">
   <properties/>
-  <testcase name="start" classname="AntiFraudTest" time="29.312"/>
+  <testcase name="start" classname="AntiFraudTest" time="37.975"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 
@@ -13,32 +13,33 @@ Start test 1?[0m
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.1.RELEASE)
 
-2022-07-10 23:45:36.795  INFO 22653 --- [    Test worker] antifraud.AntiFraudApplication           : Starting AntiFraudApplication on oxmox with PID 22653 (started by oxmox in /home/oxmox/IdeaProjects/Anti-Fraud System/task)
-2022-07-10 23:45:36.804  INFO 22653 --- [    Test worker] antifraud.AntiFraudApplication           : No active profile set, falling back to default profiles: default
-2022-07-10 23:45:40.096  INFO 22653 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2022-07-10 23:45:40.220  INFO 22653 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112ms. Found 3 JPA repository interfaces.
-2022-07-10 23:45:41.725  INFO 22653 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 28852 (http)
-2022-07-10 23:45:41.764  INFO 22653 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-07-10 23:45:41.766  INFO 22653 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
-2022-07-10 23:45:41.947  INFO 22653 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-07-10 23:45:41.948  INFO 22653 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4896 ms
-2022-07-10 23:45:42.538  INFO 22653 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2022-07-10 23:45:42.683  INFO 22653 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-07-10 23:45:42.937  WARN 22653 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-07-10 23:45:42.953  INFO 22653 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
-2022-07-10 23:45:43.483  INFO 22653 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/h2-console/**'], []
-2022-07-10 23:45:43.541  INFO 22653 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2022-07-10 23:45:43.573  INFO 22653 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1216eb3f, org.springframework.security.web.context.SecurityContextPersistenceFilter@2b7facc7, org.springframework.security.web.header.HeaderWriterFilter@6f96dd64, org.springframework.security.web.authentication.logout.LogoutFilter@3915e7c3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@48cdb156, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24197b13, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@478967eb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59e7564b, org.springframework.security.web.session.SessionManagementFilter@2450256f, org.springframework.security.web.access.ExceptionTranslationFilter@5e2a6991, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3cc3f13e]
-2022-07-10 23:45:43.985  INFO 22653 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-07-10 23:45:44.591  INFO 22653 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-07-10 23:45:44.655  INFO 22653 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2022-07-10 23:45:46.749  INFO 22653 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-07-10 23:45:46.784  INFO 22653 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-07-10 23:45:46.956  INFO 22653 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2022-07-10 23:45:47.377  INFO 22653 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 28852 (http) with context path ''
-2022-07-10 23:45:47.380  INFO 22653 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2022-07-10 23:45:48.360  INFO 22653 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2022-07-10 23:45:48.376  INFO 22653 --- [    Test worker] antifraud.AntiFraudApplication           : Started AntiFraudApplication in 12.689 seconds (JVM running for 17.33)
+2022-07-11 07:12:51.131  INFO 55466 --- [    Test worker] antifraud.AntiFraudApplication           : Starting AntiFraudApplication on oxmox with PID 55466 (started by oxmox in /home/oxmox/IdeaProjects/Anti-Fraud System/task)
+2022-07-11 07:12:51.140  INFO 55466 --- [    Test worker] antifraud.AntiFraudApplication           : No active profile set, falling back to default profiles: default
+2022-07-11 07:12:54.518  INFO 55466 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-07-11 07:12:54.699  INFO 55466 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 156ms. Found 4 JPA repository interfaces.
+2022-07-11 07:12:57.283  INFO 55466 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 28852 (http)
+2022-07-11 07:12:57.345  INFO 55466 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-11 07:12:57.346  INFO 55466 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2022-07-11 07:12:57.639  INFO 55466 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-11 07:12:57.639  INFO 55466 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6217 ms
+2022-07-11 07:12:58.000  INFO 55466 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-11 07:12:58.395  INFO 55466 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-11 07:12:58.403  INFO 55466 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../service_db'
+2022-07-11 07:12:58.719  INFO 55466 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-11 07:12:58.955  INFO 55466 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-11 07:12:59.535  WARN 55466 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-11 07:13:00.315  INFO 55466 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2022-07-11 07:13:01.295  INFO 55466 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/h2-console/**'], []
+2022-07-11 07:13:01.376  INFO 55466 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@456aa471, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e77678c, org.springframework.security.web.header.HeaderWriterFilter@4438b862, org.springframework.security.web.authentication.logout.LogoutFilter@b5312df, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4afd65fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f0677f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@376b5cb2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69e2fe3b, org.springframework.security.web.session.SessionManagementFilter@5103eea2, org.springframework.security.web.access.ExceptionTranslationFilter@4522d793, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@39ace1a7]
+2022-07-11 07:13:03.835  INFO 55466 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2022-07-11 07:13:04.478  INFO 55466 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-07-11 07:13:05.898  INFO 55466 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-11 07:13:05.931  INFO 55466 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-11 07:13:06.090  INFO 55466 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-07-11 07:13:06.599  INFO 55466 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 28852 (http) with context path ''
+2022-07-11 07:13:06.602  INFO 55466 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2022-07-11 07:13:07.769  INFO 55466 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2022-07-11 07:13:07.795  INFO 55466 --- [    Test worker] antifraud.AntiFraudApplication           : Started AntiFraudApplication in 17.927 seconds (JVM running for 21.011)
 Test case
 Testing api: '/api/auth/user'
 request: '{
@@ -47,10 +48,10 @@ request: '{
 }'
 Expectations: 'In case of wrong data in request, endpoint must respond with BAD REQUEST  status (400).'
 -----
-2022-07-10 23:45:49.684  INFO 22653 --- [io-28852-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-07-10 23:45:49.687  INFO 22653 --- [io-28852-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-07-10 23:45:49.697  INFO 22653 --- [io-28852-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
-2022-07-10 23:45:50.096  WARN 22653 --- [io-28852-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.UserDto> antifraud.controller.UserController.createUser(antifraud.model.dto.UserDto): [Field error in object 'userDto' on field 'username': rejected value [null]; codes [NotEmpty.userDto.username,NotEmpty.username,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userDto.username,username]; arguments []; default message [username]]; default message [must not be empty]] ]
+2022-07-11 07:13:08.875  INFO 55466 --- [io-28852-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-11 07:13:08.877  INFO 55466 --- [io-28852-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-11 07:13:08.887  INFO 55466 --- [io-28852-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2022-07-11 07:13:09.316  WARN 55466 --- [io-28852-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.UserDto> antifraud.controller.UserController.createUser(antifraud.model.dto.UserDto): [Field error in object 'userDto' on field 'username': rejected value [null]; codes [NotEmpty.userDto.username,NotEmpty.username,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userDto.username,username]; arguments []; default message [username]]; default message [must not be empty]] ]
 ?[1;31m
 Start test 2?[0m
 Test case
@@ -61,7 +62,7 @@ request: '{
 }'
 Expectations: 'In case of wrong data in request, endpoint must respond with BAD REQUEST  status (400).'
 -----
-2022-07-10 23:45:50.192  WARN 22653 --- [io-28852-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.UserDto> antifraud.controller.UserController.createUser(antifraud.model.dto.UserDto): [Field error in object 'userDto' on field 'password': rejected value [null]; codes [NotEmpty.userDto.password,NotEmpty.password,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userDto.password,password]; arguments []; default message [password]]; default message [must not be empty]] ]
+2022-07-11 07:13:09.480  WARN 55466 --- [io-28852-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.UserDto> antifraud.controller.UserController.createUser(antifraud.model.dto.UserDto): [Field error in object 'userDto' on field 'password': rejected value [null]; codes [NotEmpty.userDto.password,NotEmpty.password,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userDto.password,password]; arguments []; default message [password]]; default message [must not be empty]] ]
 ?[1;31m
 Start test 3?[0m
 Test case
@@ -126,6 +127,7 @@ Test case
 Testing api: '/api/antifraud/transaction'
 Expectations: 'A user johndoe1 must be UNLOCKED'
 -----
+ALLOWED
 ?[1;31m
 Start test 12?[0m
 Test case
@@ -133,12 +135,13 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = 1'
 Expectations: 'Result validating of Transaction must be 'ALLOWED''
 -----
+ALLOWED
 ?[1;31m
 Start test 13?[0m
-2022-07-10 23:45:52.513  INFO 22653 --- [     Thread-335] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-07-10 23:45:52.528  INFO 22653 --- [     Thread-335] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2022-07-10 23:45:52.540  INFO 22653 --- [     Thread-335] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-07-10 23:45:52.872  INFO 22653 --- [     Thread-335] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-07-11 07:13:12.339  INFO 55466 --- [     Thread-336] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-11 07:13:12.342  INFO 55466 --- [     Thread-336] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-07-11 07:13:12.344  INFO 55466 --- [     Thread-336] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-07-11 07:13:12.707  INFO 55466 --- [     Thread-336] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -148,39 +151,40 @@ Start test 13?[0m
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.1.RELEASE)
 
-2022-07-10 23:45:52.950  INFO 22653 --- [    Test worker] antifraud.AntiFraudApplication           : Starting AntiFraudApplication on oxmox with PID 22653 (started by oxmox in /home/oxmox/IdeaProjects/Anti-Fraud System/task)
-2022-07-10 23:45:52.951  INFO 22653 --- [    Test worker] antifraud.AntiFraudApplication           : No active profile set, falling back to default profiles: default
-2022-07-10 23:45:53.585  INFO 22653 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2022-07-10 23:45:53.601  INFO 22653 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 3 JPA repository interfaces.
-2022-07-10 23:45:53.813  INFO 22653 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 28852 (http)
-2022-07-10 23:45:53.814  INFO 22653 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-07-10 23:45:53.815  INFO 22653 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
-2022-07-10 23:45:53.837  INFO 22653 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-07-10 23:45:53.837  INFO 22653 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 878 ms
-2022-07-10 23:45:54.001  INFO 22653 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2022-07-10 23:45:54.032  INFO 22653 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-07-10 23:45:54.043  INFO 22653 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2022-07-10 23:45:54.075  INFO 22653 --- [         task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2022-07-10 23:45:54.075  INFO 22653 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2022-07-10 23:45:54.087  WARN 22653 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-07-10 23:45:54.207  INFO 22653 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/h2-console/**'], []
-2022-07-10 23:45:54.230  INFO 22653 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35744f8, org.springframework.security.web.context.SecurityContextPersistenceFilter@1bf10539, org.springframework.security.web.header.HeaderWriterFilter@762f8ff6, org.springframework.security.web.authentication.logout.LogoutFilter@5e34a84b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@438c0aaf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e406cbe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@141a10bf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6fbcc078, org.springframework.security.web.session.SessionManagementFilter@30ed2a26, org.springframework.security.web.access.ExceptionTranslationFilter@2e057637, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3be369fc]
-2022-07-10 23:45:54.269  INFO 22653 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-07-10 23:45:54.282  INFO 22653 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-07-10 23:45:54.603  INFO 22653 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2022-07-10 23:45:54.633  INFO 22653 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 28852 (http) with context path ''
-2022-07-10 23:45:54.634  INFO 22653 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2022-07-10 23:45:54.740  INFO 22653 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2022-07-10 23:45:54.748  INFO 22653 --- [    Test worker] antifraud.AntiFraudApplication           : Started AntiFraudApplication in 1.848 seconds (JVM running for 23.702)
+2022-07-11 07:13:12.772  INFO 55466 --- [    Test worker] antifraud.AntiFraudApplication           : Starting AntiFraudApplication on oxmox with PID 55466 (started by oxmox in /home/oxmox/IdeaProjects/Anti-Fraud System/task)
+2022-07-11 07:13:12.779  INFO 55466 --- [    Test worker] antifraud.AntiFraudApplication           : No active profile set, falling back to default profiles: default
+2022-07-11 07:13:13.344  INFO 55466 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-07-11 07:13:13.363  INFO 55466 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 4 JPA repository interfaces.
+2022-07-11 07:13:13.487  INFO 55466 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 28852 (http)
+2022-07-11 07:13:13.488  INFO 55466 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-11 07:13:13.488  INFO 55466 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2022-07-11 07:13:13.519  INFO 55466 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-11 07:13:13.519  INFO 55466 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 728 ms
+2022-07-11 07:13:13.601  INFO 55466 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-07-11 07:13:13.624  INFO 55466 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-07-11 07:13:13.624  INFO 55466 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:../service_db'
+2022-07-11 07:13:13.714  INFO 55466 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-11 07:13:13.731  INFO 55466 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-11 07:13:13.749  INFO 55466 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-07-11 07:13:13.827  WARN 55466 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-11 07:13:13.947  INFO 55466 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/h2-console/**'], []
+2022-07-11 07:13:13.970  INFO 55466 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@747e8659, org.springframework.security.web.context.SecurityContextPersistenceFilter@4229b92c, org.springframework.security.web.header.HeaderWriterFilter@7e7391e8, org.springframework.security.web.authentication.logout.LogoutFilter@54ef9698, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@31dd0e2e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47c356e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66e218d8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b360a82, org.springframework.security.web.session.SessionManagementFilter@1fa44f66, org.springframework.security.web.access.ExceptionTranslationFilter@1eab0700, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@a6204e4]
+2022-07-11 07:13:14.035  INFO 55466 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-11 07:13:14.042  INFO 55466 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-11 07:13:14.268  INFO 55466 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-07-11 07:13:14.302  INFO 55466 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 28852 (http) with context path ''
+2022-07-11 07:13:14.303  INFO 55466 --- [    Test worker] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2022-07-11 07:13:14.417  INFO 55466 --- [    Test worker] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2022-07-11 07:13:14.422  INFO 55466 --- [    Test worker] antifraud.AntiFraudApplication           : Started AntiFraudApplication in 1.704 seconds (JVM running for 27.638)
 ?[1;31m
 Start test 14?[0m
 Test case
 Testing api: '/api/auth/list'
 Expectations: 'After restart user must exist'
 -----
-2022-07-10 23:45:54.766  INFO 22653 --- [io-28852-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-07-10 23:45:54.766  INFO 22653 --- [io-28852-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-07-10 23:45:54.769  INFO 22653 --- [io-28852-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-07-11 07:13:14.433  INFO 55466 --- [io-28852-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-11 07:13:14.433  INFO 55466 --- [io-28852-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-11 07:13:14.446  INFO 55466 --- [io-28852-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
 ?[1;31m
 Start test 15?[0m
 Test case
@@ -216,6 +220,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = 199'
 Expectations: 'Result validating of Transaction must be 'ALLOWED''
 -----
+ALLOWED
 ?[1;31m
 Start test 19?[0m
 Test case
@@ -223,6 +228,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = 200'
 Expectations: 'Result validating of Transaction must be 'ALLOWED''
 -----
+ALLOWED
 ?[1;31m
 Start test 20?[0m
 Test case
@@ -230,6 +236,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = 201'
 Expectations: 'Result validating of Transaction must be 'MANUAL_PROCESSING''
 -----
+MANUAL_PROCESSING
 ?[1;31m
 Start test 21?[0m
 Test case
@@ -237,6 +244,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = 1499'
 Expectations: 'Result validating of Transaction must be 'MANUAL_PROCESSING''
 -----
+MANUAL_PROCESSING
 ?[1;31m
 Start test 22?[0m
 Test case
@@ -244,6 +252,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = 1500'
 Expectations: 'Result validating of Transaction must be 'MANUAL_PROCESSING''
 -----
+MANUAL_PROCESSING
 ?[1;31m
 Start test 23?[0m
 Test case
@@ -251,6 +260,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = 1501'
 Expectations: 'Result validating of Transaction must be 'PROHIBITED''
 -----
+PROHIBITED
 ?[1;31m
 Start test 24?[0m
 Test case
@@ -258,6 +268,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = 2000'
 Expectations: 'Result validating of Transaction must be 'PROHIBITED''
 -----
+PROHIBITED
 ?[1;31m
 Start test 25?[0m
 Test case
@@ -265,7 +276,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = -1'
 Expectations: 'Response status must be 'Bad request''
 -----
-2022-07-10 23:45:56.444  WARN 22653 --- [io-28852-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.UserController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [-1]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
+2022-07-11 07:13:16.192  WARN 55466 --- [io-28852-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.TransactionController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [-1]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
 ?[1;31m
 Start test 26?[0m
 Test case
@@ -273,7 +284,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = 0'
 Expectations: 'Response status must be 'Bad request''
 -----
-2022-07-10 23:45:56.554  WARN 22653 --- [io-28852-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.UserController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [0]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
+2022-07-11 07:13:16.310  WARN 55466 --- [io-28852-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.TransactionController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [0]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
 ?[1;31m
 Start test 27?[0m
 Test case
@@ -281,7 +292,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = null'
 Expectations: 'Response status must be 'Bad request''
 -----
-2022-07-10 23:45:56.664  WARN 22653 --- [io-28852-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.UserController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [0]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
+2022-07-11 07:13:16.427  WARN 55466 --- [io-28852-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.TransactionController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [0]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
 ?[1;31m
 Start test 28?[0m
 Test case
@@ -289,7 +300,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = ""'
 Expectations: 'Response status must be 'Bad request''
 -----
-2022-07-10 23:45:56.773  WARN 22653 --- [io-28852-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.UserController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [0]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
+2022-07-11 07:13:16.558  WARN 55466 --- [io-28852-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.TransactionController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [0]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
 ?[1;31m
 Start test 29?[0m
 Test case
@@ -297,7 +308,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'amount = " "'
 Expectations: 'Response status must be 'Bad request''
 -----
-2022-07-10 23:45:56.894  WARN 22653 --- [io-28852-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.UserController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [0]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
+2022-07-11 07:13:16.677  WARN 55466 --- [io-28852-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.TransactionController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [0]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
 ?[1;31m
 Start test 30?[0m
 Test case
@@ -305,7 +316,7 @@ Testing api: '/api/antifraud/transaction'
 request: 'empty body'
 Expectations: 'Response status must be 'Bad request''
 -----
-2022-07-10 23:45:57.001  WARN 22653 --- [io-28852-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.UserController.acceptTransaction(antifraud.model.dto.TransactionDto): [Field error in object 'transactionDto' on field 'amount': rejected value [0]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
+2022-07-11 07:13:16.790  WARN 55466 --- [o-28852-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.ResultDto antifraud.controller.TransactionController.acceptTransaction(antifraud.model.dto.TransactionDto) with 2 errors: [Field error in object 'transactionDto' on field 'region': rejected value [null]; codes [EnumValueCorrect.transactionDto.region,EnumValueCorrect.region,EnumValueCorrect.java.lang.String,EnumValueCorrect]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.region,region]; arguments []; default message [region],class antifraud.model.enums.WorldRegion]; default message [Incorrect region!]] [Field error in object 'transactionDto' on field 'amount': rejected value [0]; codes [Min.transactionDto.amount,Min.amount,Min.long,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionDto.amount,amount]; arguments []; default message [amount],1]; default message [Wrong amount!]] ]
 ?[1;31m
 Start test 31?[0m
 Test case
@@ -338,7 +349,7 @@ Test case
 Testing api: '/api/auth/role'
 Expectations: 'If a role is not found, endpoint must respond with the HTTP Bad Request status (400).'
 -----
-2022-07-10 23:45:57.603  WARN 22653 --- [o-28852-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.UserDto antifraud.controller.UserController.updateUserRole(antifraud.model.dto.ChangeRoleDto): [Field error in object 'changeRoleDto' on field 'role': rejected value [USER]; codes [RoleCorrect.changeRoleDto.role,RoleCorrect.role,RoleCorrect.java.lang.String,RoleCorrect]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [changeRoleDto.role,role]; arguments []; default message [role],class antifraud.model.enums.Role]; default message [Role incorrect]] ]
+2022-07-11 07:13:17.373  WARN 55466 --- [io-28852-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public antifraud.model.dto.UserDto antifraud.controller.UserController.updateUserRole(antifraud.model.dto.ChangeRoleDto): [Field error in object 'changeRoleDto' on field 'role': rejected value [USER]; codes [EnumValueCorrect.changeRoleDto.role,EnumValueCorrect.role,EnumValueCorrect.java.lang.String,EnumValueCorrect]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [changeRoleDto.role,role]; arguments []; default message [role],class antifraud.model.enums.Role]; default message [Role incorrect!]] ]
 ?[1;31m
 Start test 36?[0m
 Test case
@@ -404,6 +415,7 @@ Test case
 Testing api: '/api/antifraud/transaction'
 Expectations: 'A user johndoe3 must be UNLOCKED'
 -----
+ALLOWED
 ?[1;31m
 Start test 46?[0m
 Test case
@@ -566,14 +578,14 @@ Test case
 Testing api: '/api/antifraud/suspicious-ip'
 Expectations: 'If IP doesn't have right format, respond with HTTP Bad Request status (400)'
 -----
-2022-07-10 23:46:01.292  WARN 22653 --- [io-28852-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.SuspiciousIpDto> antifraud.controller.CardAndIpController.addSuspiciousIP(antifraud.model.dto.SuspiciousIpDto): [Field error in object 'suspiciousIpDto' on field 'ip': rejected value [192.168.351.66]; codes [Pattern.suspiciousIpDto.ip,Pattern.ip,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [suspiciousIpDto.ip,ip]; arguments []; default message [ip],[Ljavax.validation.constraints.Pattern$Flag;@395f2ae3,((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)(\.(?!$)|$)){4}]; default message [Wrong IP format!]] ]
+2022-07-11 07:13:21.167  WARN 55466 --- [io-28852-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.SuspiciousIpDto> antifraud.controller.CardAndIpController.addSuspiciousIP(antifraud.model.dto.SuspiciousIpDto): [Field error in object 'suspiciousIpDto' on field 'ip': rejected value [192.168.351.66]; codes [Pattern.suspiciousIpDto.ip,Pattern.ip,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [suspiciousIpDto.ip,ip]; arguments []; default message [ip],[Ljavax.validation.constraints.Pattern$Flag;@7961a4d6,((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)(\.(?!$)|$)){4}]; default message [Wrong ip format!]] ]
 ?[1;31m
 Start test 73?[0m
 Test case
 Testing api: '/api/antifraud/suspicious-ip'
 Expectations: 'If IP doesn't have right format, respond with HTTP Bad Request status (400)'
 -----
-2022-07-10 23:46:01.407  WARN 22653 --- [io-28852-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.SuspiciousIpDto> antifraud.controller.CardAndIpController.addSuspiciousIP(antifraud.model.dto.SuspiciousIpDto): [Field error in object 'suspiciousIpDto' on field 'ip': rejected value [192.168.1.]; codes [Pattern.suspiciousIpDto.ip,Pattern.ip,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [suspiciousIpDto.ip,ip]; arguments []; default message [ip],[Ljavax.validation.constraints.Pattern$Flag;@395f2ae3,((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)(\.(?!$)|$)){4}]; default message [Wrong IP format!]] ]
+2022-07-11 07:13:21.281  WARN 55466 --- [io-28852-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.SuspiciousIpDto> antifraud.controller.CardAndIpController.addSuspiciousIP(antifraud.model.dto.SuspiciousIpDto): [Field error in object 'suspiciousIpDto' on field 'ip': rejected value [192.168.1.]; codes [Pattern.suspiciousIpDto.ip,Pattern.ip,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [suspiciousIpDto.ip,ip]; arguments []; default message [ip],[Ljavax.validation.constraints.Pattern$Flag;@7961a4d6,((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)(\.(?!$)|$)){4}]; default message [Wrong ip format!]] ]
 ?[1;31m
 Start test 74?[0m
 Test case
@@ -634,14 +646,14 @@ Test case
 Testing api: '/api/antifraud/stolencard'
 Expectations: 'If card-number doesn't have right format, endpoint must respond with HTTP Bad Request status (400).'
 -----
-2022-07-10 23:46:02.628  WARN 22653 --- [io-28852-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.StolenCreditCardDto> antifraud.controller.CardAndIpController.addStolenCard(antifraud.model.dto.StolenCreditCardDto): [Field error in object 'stolenCreditCardDto' on field 'number': rejected value [400000330506103]; codes [LuhnCheck.stolenCreditCardDto.number,LuhnCheck.number,LuhnCheck.java.lang.String,LuhnCheck]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [stolenCreditCardDto.number,number]; arguments []; default message [number],-1,2147483647,true,0]; default message [Incorrect card number!]] ]
+2022-07-11 07:13:22.485  WARN 55466 --- [io-28852-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.StolenCreditCardDto> antifraud.controller.CardAndIpController.addStolenCard(antifraud.model.dto.StolenCreditCardDto): [Field error in object 'stolenCreditCardDto' on field 'number': rejected value [400000330506103]; codes [LuhnCheck.stolenCreditCardDto.number,LuhnCheck.number,LuhnCheck.java.lang.String,LuhnCheck]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [stolenCreditCardDto.number,number]; arguments []; default message [number],-1,2147483647,true,0]; default message [Incorrect card number!]] ]
 ?[1;31m
 Start test 84?[0m
 Test case
 Testing api: '/api/antifraud/stolencard'
 Expectations: 'If checksum of card-number is wrong, endpoint must respond with HTTP Bad Request status (400).'
 -----
-2022-07-10 23:46:02.736  WARN 22653 --- [io-28852-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.StolenCreditCardDto> antifraud.controller.CardAndIpController.addStolenCard(antifraud.model.dto.StolenCreditCardDto): [Field error in object 'stolenCreditCardDto' on field 'number': rejected value [4000003305061033]; codes [LuhnCheck.stolenCreditCardDto.number,LuhnCheck.number,LuhnCheck.java.lang.String,LuhnCheck]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [stolenCreditCardDto.number,number]; arguments []; default message [number],-1,2147483647,true,0]; default message [Incorrect card number!]] ]
+2022-07-11 07:13:22.598  WARN 55466 --- [io-28852-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<antifraud.model.dto.StolenCreditCardDto> antifraud.controller.CardAndIpController.addStolenCard(antifraud.model.dto.StolenCreditCardDto): [Field error in object 'stolenCreditCardDto' on field 'number': rejected value [4000003305061033]; codes [LuhnCheck.stolenCreditCardDto.number,LuhnCheck.number,LuhnCheck.java.lang.String,LuhnCheck]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [stolenCreditCardDto.number,number]; arguments []; default message [number],-1,2147483647,true,0]; default message [Incorrect card number!]] ]
 ?[1;31m
 Start test 85?[0m
 Test case
@@ -684,24 +696,161 @@ Test case
 Testing api: '/api/antifraud/transaction'
 Expectations: 'Transaction must be PROHIBITED due to - suspicious ip reason'
 -----
+PROHIBITED
 ?[1;31m
 Start test 92?[0m
 Test case
 Testing api: '/api/antifraud/transaction'
 Expectations: 'Transaction must be PROHIBITED due to - stolen card reason'
 -----
+PROHIBITED
 ?[1;31m
 Start test 93?[0m
 Test case
 Testing api: '/api/antifraud/transaction'
 Expectations: 'Transaction must be PROHIBITED due to - stolen card, suspicious ip reasons'
 -----
+PROHIBITED
 ?[1;31m
 Start test 94?[0m
 Test case
 Testing api: '/api/antifraud/transaction'
 Expectations: 'Transaction must be PROHIBITED due to - amount, stolen card, suspicious ip reasons'
 -----
+PROHIBITED
+?[1;31m
+Start test 95?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be ALLOWED'
+-----
+ALLOWED
+?[1;31m
+Start test 96?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be ALLOWED'
+-----
+ALLOWED
+?[1;31m
+Start test 97?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be ALLOWED'
+-----
+ALLOWED
+?[1;31m
+Start test 98?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be MANUAL_PROCESSING due to - ip correlation rule'
+-----
+MANUAL_PROCESSING
+?[1;31m
+Start test 99?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be PROHIBITED due to - ip correlation rule'
+-----
+PROHIBITED
+?[1;31m
+Start test 100?[0m
+Test case
+Testing api: '/api/antifraud/stolencard'
+Expectations: 'A card must be added to Black List'
+-----
+?[1;31m
+Start test 101?[0m
+Test case
+Testing api: '/api/antifraud/suspicious-ip'
+Expectations: 'IP must be added to Black List'
+-----
+?[1;31m
+Start test 102?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be PROHIBITED due to - amount, card-number, ip, ip-correlation reasons'
+-----
+PROHIBITED
+?[1;31m
+Start test 103?[0m
+Test case
+Testing api: '/api/antifraud/stolencard'
+Expectations: 'Card must be removed from Black List'
+-----
+?[1;31m
+Start test 104?[0m
+Test case
+Testing api: '/api/antifraud/suspicious-ip'
+Expectations: 'IP must be removed from Black List'
+-----
+?[1;31m
+Start test 105?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be ALLOWED'
+-----
+ALLOWED
+?[1;31m
+Start test 106?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be ALLOWED'
+-----
+ALLOWED
+?[1;31m
+Start test 107?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be ALLOWED'
+-----
+ALLOWED
+?[1;31m
+Start test 108?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be MANUAL_PROCESSING due to - region correlation rule'
+-----
+MANUAL_PROCESSING
+?[1;31m
+Start test 109?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be PROHIBITED due to - region correlation rule'
+-----
+PROHIBITED
+?[1;31m
+Start test 110?[0m
+Test case
+Testing api: '/api/antifraud/stolencard'
+Expectations: 'A card must be added to Black List'
+-----
+?[1;31m
+Start test 111?[0m
+Test case
+Testing api: '/api/antifraud/suspicious-ip'
+Expectations: 'IP must be added to Black List'
+-----
+?[1;31m
+Start test 112?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be PROHIBITED due to - amount, card-number, ip, region-correlation reasons'
+-----
+PROHIBITED
+?[1;31m
+Start test 113?[0m
+Test case
+Testing api: '/api/antifraud/stolencard'
+Expectations: 'Card must be removed from Black List'
+-----
+?[1;31m
+Start test 114?[0m
+Test case
+Testing api: '/api/antifraud/transaction'
+Expectations: 'Transaction must be MANUAL_PROCESSING due to - ip correlation rule'
+-----
+MANUAL_PROCESSING
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

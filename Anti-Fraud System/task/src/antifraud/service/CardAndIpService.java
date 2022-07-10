@@ -1,21 +1,25 @@
 package antifraud.service;
 
+import antifraud.dao.HistoryDao;
 import antifraud.dao.StolenCreditCardDao;
 import antifraud.dao.SuspiciousIpDao;
 import antifraud.dao.UserDao;
 import antifraud.model.entity.StolenCreditCard;
 import antifraud.model.entity.SuspiciousIp;
+import antifraud.model.entity.Transaction;
 import antifraud.model.entity.User;
 import antifraud.model.enums.Role;
+import antifraud.model.enums.WorldRegion;
 import antifraud.security.exeption.CardIsStolenException;
 import antifraud.security.exeption.CardNotFoundException;
 import antifraud.security.exeption.IpBannedException;
 import antifraud.security.exeption.IpNotFoundException;
 import antifraud.security.exeption.UserExistsException;
-import antifraud.security.exeption.UserNotFound;
+import antifraud.security.exeption.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -24,13 +28,18 @@ public class CardAndIpService {
     private final UserDao userDao;
     private final SuspiciousIpDao ipDao;
     private final StolenCreditCardDao cardDao;
-
+    private final HistoryDao historyDao;
     @Autowired
 
-    public CardAndIpService(UserDao userDao, SuspiciousIpDao ipDao, StolenCreditCardDao cardDao) {
+    public CardAndIpService(UserDao userDao,
+                            SuspiciousIpDao ipDao,
+                            StolenCreditCardDao cardDao,
+                            HistoryDao historyDao) {
+
             this.userDao = userDao;
             this.ipDao = ipDao;
             this.cardDao = cardDao;
+            this.historyDao = historyDao;
         }
 
         public User create(User user) {
@@ -57,7 +66,7 @@ public class CardAndIpService {
         public User findUser(String username) {
             return userDao
                     .findByUsernameIgnoreCase(username)
-                    .orElseThrow(UserNotFound::new);
+                    .orElseThrow(UserNotFoundException::new);
         }
         public void update(User user) {
             userDao.save(user);
@@ -107,4 +116,23 @@ public class CardAndIpService {
     public List<StolenCreditCard> getAllStolenCards() {
         return (List<StolenCreditCard>) cardDao.findAll();
     }
+    public Transaction saveTransactionToHistory(Transaction transaction) {
+        return historyDao.save(transaction);
+    }
+
+    public List<Transaction> getTransactionsCardRegionAndTime(String cardNumber,
+                                                              WorldRegion region,
+                                                              LocalDateTime start,
+                                                              LocalDateTime end) {
+        return historyDao
+                .findAllByNumberAndRegionNotAndDateBetween(cardNumber, region, start, end);
+    }
+
+    public List<Transaction> getTransactionsCardIpAndTime(String cardNumber,
+                                                          String ip,
+                                                          LocalDateTime start,
+                                                          LocalDateTime end) {
+        return historyDao.findAllByNumberAndIpNotAndDateBetween(cardNumber, ip, start, end);
+    }
+
 }

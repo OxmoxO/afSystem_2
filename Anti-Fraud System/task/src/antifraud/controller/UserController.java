@@ -2,11 +2,9 @@ package antifraud.controller;
 
 
 import antifraud.model.dto.ChangeRoleDto;
-import antifraud.model.dto.ResultDto;
+import antifraud.model.dto.OperationDto;
 import antifraud.model.dto.StatusDto;
-import antifraud.model.dto.TransactionDto;
 import antifraud.model.dto.UserDto;
-import antifraud.model.dto.UserOperationDto;
 import antifraud.model.entity.User;
 import antifraud.model.enums.Operation;
 import antifraud.model.enums.Role;
@@ -14,7 +12,6 @@ import antifraud.model.mapper.UserConverterMapper;
 import antifraud.security.exeption.BadRequestException;
 import antifraud.security.exeption.RoleIsAlreadyProvidedException;
 import antifraud.service.CardAndIpService;
-import antifraud.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,24 +35,18 @@ public class UserController {
         private final CardAndIpService cardAndIpService;
         private final UserConverterMapper userMapper;
         private final PasswordEncoder passwordEncoder;
-        private final TransactionService transactionService;
+
 
         @Autowired
         public UserController(CardAndIpService cardAndIpService,
                               UserConverterMapper userMapper,
-                              PasswordEncoder passwordEncoder,
-                              TransactionService transactionService) {
+                              PasswordEncoder passwordEncoder) {
 
             this.cardAndIpService = cardAndIpService;
             this.userMapper = userMapper;
             this.passwordEncoder = passwordEncoder;
-            this.transactionService = transactionService;
         }
 
-        @PostMapping("/api/antifraud/transaction")
-        public ResultDto acceptTransaction(@RequestBody @Valid TransactionDto transactionDto) {
-            return transactionService.resolve(transactionDto);
-        }
 
         @PostMapping("/api/auth/user")
         public ResponseEntity<UserDto> createUser(@RequestBody @Valid UserDto userDto) {
@@ -97,7 +88,7 @@ public class UserController {
         }
 
         @PutMapping("/api/auth/access")
-        public StatusDto lockUnlockUser(@RequestBody @Valid UserOperationDto userOperationDto) {
+        public StatusDto lockUnlockUser(@RequestBody @Valid OperationDto userOperationDto) {
             String username = userOperationDto.getUsername();
             User user = cardAndIpService.findUser(username);
 

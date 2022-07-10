@@ -2368,18 +2368,6 @@ files:
         E toEntity(D dto);
     }
   learner_created: true
-- name: src/antifraud/security/exeption/UserNotFound.java
-  visible: true
-  text: |-
-    package antifraud.security.exeption;
-
-    import org.springframework.http.HttpStatus;
-    import org.springframework.web.bind.annotation.ResponseStatus;
-
-    @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "User not found!")
-    public class UserNotFound extends RuntimeException{
-    }
-  learner_created: true
 - name: src/antifraud/security/exeption/RoleIsAlreadyProvidedException.java
   visible: true
   text: |
@@ -2390,33 +2378,6 @@ files:
 
     @ResponseStatus(code = HttpStatus.CONFLICT, reason = "Excessive role")
     public class RoleIsAlreadyProvidedException extends RuntimeException{ }
-  learner_created: true
-- name: src/antifraud/model/annotation/RoleCorrect.java
-  visible: true
-  text: |
-    package antifraud.model.annotation;
-
-    import javax.validation.Constraint;
-    import javax.validation.Payload;
-    import javax.validation.ReportAsSingleViolation;
-    import javax.validation.constraints.NotNull;
-    import java.lang.annotation.*;
-
-    @Documented
-    @Constraint(validatedBy = RoleValidator.class)
-    @Retention(RetentionPolicy.RUNTIME)
-    @Target(ElementType.FIELD)
-    @NotNull(message = "Value cannot be null")
-    @ReportAsSingleViolation
-    public @interface RoleCorrect {
-        Class<? extends Enum<?>> enumClazz();
-
-        String message() default "Value is not valid";
-
-        Class<?>[] groups() default {};
-
-        Class<? extends Payload>[] payload() default {};
-    }
   learner_created: true
 - name: src/antifraud/model/mapper/StolenCardConverterMapper.java
   visible: true
@@ -2454,41 +2415,6 @@ files:
         PROHIBITED,
         MANUAL_PROCESSING
     }
-
-  learner_created: true
-- name: src/antifraud/model/annotation/RoleValidator.java
-  visible: true
-  text: |+
-    package antifraud.model.annotation;
-
-    import javax.validation.ConstraintValidator;
-    import javax.validation.ConstraintValidatorContext;
-    import java.util.ArrayList;
-    import java.util.List;
-
-    public class RoleValidator implements ConstraintValidator<RoleCorrect, String> {
-
-        List<String> valueList = null;
-
-        @Override
-        public boolean isValid(String value, ConstraintValidatorContext context) {
-            return valueList.contains(value);
-        }
-
-        @Override
-        public void initialize(RoleCorrect constraintAnnotation) {
-            valueList = new ArrayList<>();
-            Class<? extends Enum<?>> enumClass = constraintAnnotation.enumClazz();
-
-            @SuppressWarnings("rawtypes")
-            Enum[] enumValArr = enumClass.getEnumConstants();
-
-            for (@SuppressWarnings("rawtypes") Enum enumVal : enumValArr) {
-                valueList.add(enumVal.toString());
-            }
-        }
-    }
-
 
   learner_created: true
 - name: src/antifraud/dao/UserDao.java
@@ -2599,29 +2525,6 @@ files:
     @ResponseStatus(code = HttpStatus.CONFLICT, reason = "Card is stolen!")
     public class CardIsStolenException extends RuntimeException{
 
-    }
-  learner_created: true
-- name: src/antifraud/model/dto/UserOperationDto.java
-  visible: true
-  text: |-
-    package antifraud.model.dto;
-
-    import antifraud.model.annotation.OperationCorrect;
-    import antifraud.model.enums.Operation;
-    import lombok.Data;
-    import lombok.NoArgsConstructor;
-
-    import javax.validation.constraints.NotEmpty;
-
-    @NoArgsConstructor
-    @Data
-    public class UserOperationDto {
-
-        @NotEmpty
-        private String username;
-        @OperationCorrect(enumClazz = Operation.class,
-                          message = "Operation must be LOCK or UNLOCK!")
-        private String operation;
     }
   learner_created: true
 - name: src/antifraud/service/CardAndIpService.java
@@ -2750,6 +2653,127 @@ files:
     public class IpNotFoundException extends RuntimeException{
     }
   learner_created: true
+- name: src/antifraud/model/annotation/EnumValueCorrect.java
+  visible: true
+  text: |
+    package antifraud.model.annotation;
+
+    import javax.validation.Constraint;
+    import javax.validation.Payload;
+    import javax.validation.ReportAsSingleViolation;
+    import javax.validation.constraints.NotNull;
+    import java.lang.annotation.*;
+
+    @Documented
+    @Constraint(validatedBy = RoleValidator.class)
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.FIELD)
+    @NotNull(message = "Value cannot be null")
+    @ReportAsSingleViolation
+    public @interface RoleCorrect {
+        Class<? extends Enum<?>> enumClazz();
+
+        String message() default "Value is not valid";
+
+        Class<?>[] groups() default {};
+
+        Class<? extends Payload>[] payload() default {};
+    }
+  learner_created: true
+- name: src/antifraud/model/annotation/EnumValidator.java
+  visible: true
+  text: |+
+    package antifraud.model.annotation;
+
+    import javax.validation.ConstraintValidator;
+    import javax.validation.ConstraintValidatorContext;
+    import java.util.ArrayList;
+    import java.util.List;
+
+    public class RoleValidator implements ConstraintValidator<RoleCorrect, String> {
+
+        List<String> valueList = null;
+
+        @Override
+        public boolean isValid(String value, ConstraintValidatorContext context) {
+            return valueList.contains(value);
+        }
+
+        @Override
+        public void initialize(RoleCorrect constraintAnnotation) {
+            valueList = new ArrayList<>();
+            Class<? extends Enum<?>> enumClass = constraintAnnotation.enumClazz();
+
+            @SuppressWarnings("rawtypes")
+            Enum[] enumValArr = enumClass.getEnumConstants();
+
+            for (@SuppressWarnings("rawtypes") Enum enumVal : enumValArr) {
+                valueList.add(enumVal.toString());
+            }
+        }
+    }
+
+
+  learner_created: true
+- name: src/antifraud/model/enums/RegIP.java
+  visible: true
+  learner_created: true
+- name: src/antifraud/model/enums/Field.java
+  visible: true
+  learner_created: true
+- name: src/antifraud/dao/HistoryDao.java
+  visible: true
+  learner_created: true
+- name: src/antifraud/model/entity/Transaction.java
+  visible: true
+  learner_created: true
+- name: src/antifraud/model/enums/WorldRegion.java
+  visible: true
+  learner_created: true
+- name: src/antifraud/security/exeption/UserNotFoundException.java
+  visible: true
+  text: |-
+    package antifraud.security.exeption;
+
+    import org.springframework.http.HttpStatus;
+    import org.springframework.web.bind.annotation.ResponseStatus;
+
+    @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "User not found!")
+    public class UserNotFound extends RuntimeException{
+    }
+  learner_created: true
+- name: src/antifraud/model/mapper/TransactionMapper.java
+  visible: true
+  learner_created: true
+- name: src/antifraud/model/dto/OperationDto.java
+  visible: true
+  text: |-
+    package antifraud.model.dto;
+
+    import antifraud.model.annotation.OperationCorrect;
+    import antifraud.model.enums.Operation;
+    import lombok.Data;
+    import lombok.NoArgsConstructor;
+
+    import javax.validation.constraints.NotEmpty;
+
+    @NoArgsConstructor
+    @Data
+    public class UserOperationDto {
+
+        @NotEmpty
+        private String username;
+        @OperationCorrect(enumClazz = Operation.class,
+                          message = "Operation must be LOCK or UNLOCK!")
+        private String operation;
+    }
+  learner_created: true
+- name: src/antifraud/controller/TransactionController.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/18071#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sun, 10 Jul 2022 21:13:31 UTC
 record: 5

@@ -1,5 +1,6 @@
 package antifraud.model.dto;
 
+import antifraud.model.enums.RegIP;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +18,6 @@ public class SuspiciousIpDto {
     private long id;
 
     @NonNull
-    @Pattern(regexp = "((25[0-5]|(2[0-4]|1\\d|[1-9]|)\\d)(\\.(?!$)|$)){4}",
-            message = "Wrong IP format!")
+    @Pattern(regexp = RegIP.IP_FORMAT, message = "Wrong ip format!")
     private String ip;
 }

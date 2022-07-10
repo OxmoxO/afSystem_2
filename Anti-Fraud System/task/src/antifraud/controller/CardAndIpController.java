@@ -5,6 +5,7 @@ import antifraud.model.dto.StolenCreditCardDto;
 import antifraud.model.dto.SuspiciousIpDto;
 import antifraud.model.entity.StolenCreditCard;
 import antifraud.model.entity.SuspiciousIp;
+import antifraud.model.enums.RegIP;
 import antifraud.model.mapper.ConverterMapper;
 import antifraud.service.CardAndIpService;
 import org.hibernate.validator.constraints.LuhnCheck;
@@ -49,7 +50,7 @@ public class CardAndIpController {
 
     @DeleteMapping("/api/antifraud/suspicious-ip/{ip}")
     public StatusDto.IpRemovedDto deleteSuspiciousIP(@PathVariable @Valid
-                                                         @Pattern(regexp = "((25[0-5]|(2[0-4]|1\\d|[1-9]|)\\d)(\\.(?!$)|$)){4}",
+                                                         @Pattern(regexp = RegIP.IP_FORMAT,
                                                                  message = "Wrong ip format!")
                                                          String ip) {
         cardAndIpService.deleteSuspiciousIp(ip);

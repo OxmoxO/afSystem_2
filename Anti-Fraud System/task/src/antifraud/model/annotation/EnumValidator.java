@@ -5,7 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RoleValidator implements ConstraintValidator<RoleCorrect, String> {
+public class EnumValidator implements ConstraintValidator<EnumValueCorrect, String> {
 
     List<String> valueList = null;
 
@@ -14,14 +14,12 @@ public class RoleValidator implements ConstraintValidator<RoleCorrect, String> {
         return valueList.contains(value);
     }
 
-    @Override
-    public void initialize(RoleCorrect constraintAnnotation) {
+    public void initialize(EnumValueCorrect constraintAnnotation) {
         valueList = new ArrayList<>();
         Class<? extends Enum<?>> enumClass = constraintAnnotation.enumClazz();
 
         @SuppressWarnings("rawtypes")
         Enum[] enumValArr = enumClass.getEnumConstants();
-
         for (@SuppressWarnings("rawtypes") Enum enumVal : enumValArr) {
             valueList.add(enumVal.toString());
         }
